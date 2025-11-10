@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Qrcode extends Model
 {
-    //
+    protected $fillable = ['product_id','code'];
+    
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
